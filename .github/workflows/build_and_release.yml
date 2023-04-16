@@ -1,25 +1,20 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Publish MSFT ASN IP Ranges
 permissions: write-all
-# Controls when the workflow will run
+# This workflow will run once a day at 12 or on push or pull request events but only for the "master" branch
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    # runs once a day at 12
     - cron:  '0 12 * * *'
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows this workflow to run manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # Build the blacklist file
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -52,6 +47,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./blacklist.txt
-          asset_name: blacklist.txt
+          asset_path: ./msft_asn_ip_ranges.txt
+          asset_name: msft_asn_ip_ranges.txt
           asset_content_type: text/plain

@@ -42,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
-          release_name: Release ${{'%Y-%m-%d-%s')}}
+          release_name: Release-${{ steps.date.outputs.date }}
           draft: false
           prerelease: false

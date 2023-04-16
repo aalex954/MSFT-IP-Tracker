@@ -30,7 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run get_msft_ips script
         shell: pwsh
-        run: get_msft_ips.ps1
+        run: ./get_msft_ips.ps1
         
       - name: Create Release
         id: create_release

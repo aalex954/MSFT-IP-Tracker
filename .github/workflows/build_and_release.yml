@@ -49,8 +49,6 @@ jobs:
           release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
-          exclude: |
-            .zip
           
       - name: Build Artifacts
         uses: actions/upload-release-asset@v1
@@ -61,14 +59,4 @@ jobs:
           asset_path: ./msft_asn_ip_ranges.txt
           asset_name: msft_asn_ip_ranges.txt
           asset_content_type: text/plain
-          removeArtifacts: TRUE
-          exclude: |
-            .zip
-          
-      #- name: Remove Artifacts
-      #  uses: actions/upload-release-asset@v1
-      #  env:
-      #    GITHUB_TOKEN: ${{ github.token }}
-      #  with:
-      #    upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #    removeArtifacts: "Source code.zip"
+          #removeArtifacts: TRUE

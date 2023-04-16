@@ -26,6 +26,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Remove old blacklist.txt
+        shell: pwsh
+        run: rm blacklist.txt
+
       # Runs a single command using the runners shell
       - name: Run get_msft_ips script
         shell: pwsh

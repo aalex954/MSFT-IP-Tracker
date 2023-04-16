@@ -1,6 +1,8 @@
 # MSFT-IP-Tracker
 Tracks ASN: 8068-8075 using data from stat.ripe.net
 
+![example workflow](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml/badge.svg)
+
 ## Description
 
 - Tracks MSFT owned ANS IP ranges and publishes a release containing a /cr/lf delineated list of Microsoft owned IP ranges.
@@ -19,3 +21,5 @@ Example:
 - 20230415 
 - yyyyMMdd
 - https://github.com/aalex954/MSFT-IP-Tracker/releases/download/{%Y%m%d}/msft_asn_ip_ranges.txt
+
+

@@ -24,7 +24,7 @@ The most up to date list can be accessed via the aily releases.
 
 https://github.com/aalex954/MSFT-IP-Tracker/releases
 
-Update the URL in the following format: _%Y%m%d_ or _YYYYMMDD_
+Update the URL in the following format: __%Y%m%d__ or __YYYYMMDD__
 
 Example: 
 

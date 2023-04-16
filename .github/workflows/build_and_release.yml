@@ -45,16 +45,16 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -m "Auto updated submodule references" blacklist.txt && git push || echo "No changes to commit"
         
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
-          release_name: ${{ steps.date.outputs.date }}
-          draft: false
-          prerelease: false
+      #- name: Create Release
+      #  id: create_release
+      #  uses: actions/create-release@v1
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  with:
+      #  tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
+      #    release_name: ${{ steps.date.outputs.date }}
+      #    draft: false
+      #    prerelease: false
           
       - name: build artifacts
         uses: actions/upload-release-asset@v1

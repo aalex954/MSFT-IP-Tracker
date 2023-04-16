@@ -1,5 +1,6 @@
 name: Publish MSFT ASN IP Ranges
 permissions: write-all
+
 # This workflow will run once a day at 12 or on push or pull request events but only for the "master" branch
 on:
   push:
@@ -12,21 +13,15 @@ on:
   # Allows this workflow to run manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # Build the blacklist file
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-        
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    steps:  
+      # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run get_msft_ips script
+      
+      # Runs get_msft_ips.ps1 with PS
+      - name: Run get_msft_ips Script
         shell: pwsh
         run: ./get_msft_ips.ps1
         
@@ -41,7 +36,7 @@ jobs:
           draft: false
           prerelease: false
           
-      - name: build artifacts
+      - name: Build Artifacts
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}

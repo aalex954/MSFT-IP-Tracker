@@ -27,7 +27,7 @@ jobs:
 
       - name: TEST
         id: TEST
-        run: echo ${{ steps.date.outputs.date_long }} && echo ${{ steps.date.outputs.date }}
+        run: echo ${{ steps.date.date }} && echo ${{ steps.date.outputs.date_long }}
         
       # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3

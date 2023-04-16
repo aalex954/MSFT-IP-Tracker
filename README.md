@@ -16,7 +16,7 @@ https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-r
 https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7
 
 
-This tool is just to double check.
+This tool just double checks 😉
 
 ## Usage
 

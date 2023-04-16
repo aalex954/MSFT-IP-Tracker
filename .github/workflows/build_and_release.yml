@@ -22,8 +22,8 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
       - name: Get current date long
-        id: date_long
-        run: echo "::set-output name=date_long::$(date +'%Y%m%d%s')"
+        run: echo echo "{date_long}={$(date +'%Y%m%d%s')}" >> $DATE_LONG
+        
 
       - name: TEST
         id: TEST

@@ -3,10 +3,10 @@ permissions: write-all
 
 # This workflow will run once a day at 12 or on push or pull request events but only for the "master" branch
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  #push:
+    #branches: [ "master" ]
+  #pull_request:
+    #branches: [ "master" ]
   schedule:
     - cron:  '0 12 * * *'
 

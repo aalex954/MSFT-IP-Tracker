@@ -11,7 +11,8 @@ on:
     branches: [ "master" ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 5,17 * * *'
+    # runs once a day at 12
+    - cron:  '0 12 * * *
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,32 +30,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      #- name: Remove old blacklist.txt
-      #  shell: pwsh
-      #  run: rm blacklist.txt
-
       # Runs a single command using the runners shell
       - name: Run get_msft_ips script
         shell: pwsh
         run: ./get_msft_ips.ps1
         
-      - name: Commit update
-        run: |
-          git config --global user.name 'Git bot'
-          git config --global user.email 'bot@noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -m "Auto updated submodule references" blacklist.txt && git push || echo "No changes to commit"
-        
-      #- name: Create Release
-      #  id: create_release
-      #  uses: actions/create-release@v1
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  with:
-      #  tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
-      #    release_name: ${{ steps.date.outputs.date }}
-      #    draft: false
-      #    prerelease: false
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
+          release_name: ${{ steps.date.outputs.date }}
+          draft: false
+          prerelease: false
           
       - name: build artifacts
         uses: actions/upload-release-asset@v1

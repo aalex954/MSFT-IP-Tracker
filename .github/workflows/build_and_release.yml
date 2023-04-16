@@ -23,7 +23,7 @@ jobs:
         
       - name: Get current date long
         id: date_long
-        run: echo "::set-output name=date_long::$(date_long +'%Y%m%d%s')"
+        run: echo "::set-output name=date_long::$(date +'%Y%m%d%s')"
         
       # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3

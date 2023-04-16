@@ -26,11 +26,6 @@ jobs:
         #run: echo "date_long={$(date +'%Y%m%d%S')}" >> $GITHUB_OUTPUT
         run: echo "::set-output name=date::$(date +'%Y%m%d%S')"
         
-
-      - name: TEST
-        id: TEST
-        run: echo ${{ steps.date.outputs.date }} && echo ${{ steps.date_long.outputs.date }}
-        
       # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
       
@@ -41,8 +36,8 @@ jobs:
         
       - name: Create Release
         id: create_release
-        #uses: actions/create-release@v1
-        uses: ncipollo/release-action@v1.12.0
+        uses: actions/create-release@v1
+        #uses: ncipollo/release-action@v1.12.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -50,9 +45,9 @@ jobs:
           release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
-          removeArtifacts: true
-          makeLatest: true
-          exclude: .zip
+          #removeArtifacts: true
+          #makeLatest: true
+          #exclude: .zip
           
       - name: Build Artifacts
         uses: actions/upload-release-asset@v1

@@ -23,7 +23,7 @@ jobs:
         
       - name: Get current date long
         id: date_long
-        run: echo "date_long=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        run: echo "{date_long}={$(date +'%Y%m%d')}" >> $GITHUB_OUTPUT
         
 
       - name: TEST

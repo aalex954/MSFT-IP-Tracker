@@ -22,12 +22,13 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
       - name: Get current date long
+        id: date_long
         run: echo "{date_long}={$(date +'%Y%m%d%s')}" >> $GITHUB_OUTPUT
         
 
       - name: TEST
         id: TEST
-        run: echo ${{ steps.date.date }} && echo ${{ steps.date.outputs.date_long }}
+        run: echo ${{ steps.date.outputs.date }} && echo ${{ steps.date_long.outputs.date_long }}
         
       # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3

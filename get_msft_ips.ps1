@@ -13,12 +13,9 @@ for ($current_asn; $current_asn -le $as_last; $current_asn++) {
         $prefixes = $response.data.prefixes
 
         Write-Host ";$current_asn"
-        #"`r`nASN: $current_asn`r`n" | Out-File -FilePath "asn_ip_ranges.txt" -Encoding utf8 -Append
 
         foreach ($prefix in $prefixes) {
-            #Write-Host "$($prefix.prefix)"
-            #$($prefix.prefix) | Out-File -FilePath "asn_ip_ranges.txt" -Encoding utf8 -Append
-            $($prefix.prefix) | Out-File -FilePath "blacklist.txt" -Encoding utf8 -Append
+            $($prefix.prefix) | Out-File -FilePath "msft_asn_ip_ranges.txt" -Encoding utf8 -Append
         }
     } else {
         Write-Host "Error: $($response.status) - $($response.status_message)"

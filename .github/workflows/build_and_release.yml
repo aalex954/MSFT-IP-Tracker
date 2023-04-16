@@ -26,9 +26,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Remove old blacklist.txt
-        shell: pwsh
-        run: rm blacklist.txt
+      #- name: Remove old blacklist.txt
+      #  shell: pwsh
+      #  run: rm blacklist.txt
 
       # Runs a single command using the runners shell
       - name: Run get_msft_ips script
@@ -42,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
-          release_name: Release-${{ steps.date.outputs.date }}
+          release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false

@@ -3,7 +3,7 @@
 $as_first = 8068
 $as_last = 8075
 $current_asn = $as_first
-$url = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=as$as_number"
+$url = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS$current_asn"
 
 for ($current_asn; $current_asn -le $as_last; $current_asn++) {
 

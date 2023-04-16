@@ -60,6 +60,8 @@ jobs:
           asset_name: msft_asn_ip_ranges.txt
           asset_content_type: text/plain
           removeArtifacts: TRUE
+          exclude: |
+            "Source code.zip"
           
       #- name: Remove Artifacts
       #  uses: actions/upload-release-asset@v1

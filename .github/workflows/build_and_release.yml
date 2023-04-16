@@ -19,7 +19,7 @@ jobs:
     steps:  
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
       # Checks-out this repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3

@@ -20,16 +20,14 @@ This tool just double checks 😉
 
 ## Usage
 
-The most up to date list can be accessed via the aily releases.
+The most up to date list can be accessed via the daily releases.
 
 https://github.com/aalex954/MSFT-IP-Tracker/releases
 
+### Direct download:
+
 Update the URL in the following format: __%Y%m%d__ or __YYYYMMDD__
 
-Example: 
-
-- 20230415 
-- yyyyMMdd
-- https://github.com/aalex954/MSFT-IP-Tracker/releases/download/{%Y%m%d}/msft_asn_ip_ranges.txt
+```wget https://github.com/aalex954/MSFT-IP-Tracker/releases/download/{%Y%m%d}/msft_asn_ip_ranges.txt```
 
 

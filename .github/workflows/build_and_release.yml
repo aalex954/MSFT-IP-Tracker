@@ -23,7 +23,7 @@ jobs:
         
       - name: Get current date long
         id: date_long
-        run: echo "{date_long}={$(date +'%Y%m%d%S')}" >> $GITHUB_OUTPUT
+        run: echo "{date}={$(date +'%Y%m%d')}" >> $GITHUB_OUTPUT
         
 
       - name: TEST
@@ -48,7 +48,6 @@ jobs:
           release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
-          removeArtifacts: TRUE
           
       - name: Build Artifacts
         uses: actions/upload-release-asset@v1
@@ -59,6 +58,7 @@ jobs:
           asset_path: ./msft_asn_ip_ranges.txt
           asset_name: msft_asn_ip_ranges.txt
           asset_content_type: text/plain
+          removeArtifacts: TRUE
           
       #- name: Remove Artifacts
       #  uses: actions/upload-release-asset@v1

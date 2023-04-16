@@ -5,7 +5,7 @@ Tracks ASN: 8068-8075 using data from stat.ripe.net
 
 ## Description
 
-- Tracks MSFT owned ASN IP ranges and publishes a release containing a /CR /LF delineated list of Microsoft owned IPv4 and 6 ranges.
+- Tracks a range of ASNs and publishes a daily release containing a list of IPv4 and IPv6 ranges.
 - The list is updated daily at 12 AM UTC.
 
 Note:

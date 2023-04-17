@@ -104,7 +104,7 @@ UniquePrefixCount $UniquePrefixCount`n
 "
     Write-Host "Exporting to: $PWD\asn_analytics.txt"
 
-    $output | Out-File -FilePath "$PWD\asn_analytics.txt" -Encoding utf8 -Append
+    $output | Out-File -FilePath "$PWD\asn_analytics.txt" -Encoding utf8 -Force
 }
 # -------------------------------------------------------------------------------------------------------
 

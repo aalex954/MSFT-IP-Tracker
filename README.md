@@ -26,8 +26,6 @@ https://github.com/aalex954/MSFT-IP-Tracker/releases
 
 ### Direct download:
 
-Update the URL in the following format: __%Y%m%d__ or __YYYYMMDD__
-
-```wget https://github.com/aalex954/MSFT-IP-Tracker/releases/download/{%Y%m%d}/msft_asn_ip_ranges.txt```
+```wget https://github.com/aalex954/MSFT-IP-Tracker/releases/latest/download/msft_asn_ip_ranges.txt```
 
 

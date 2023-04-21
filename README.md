@@ -1,5 +1,5 @@
 # MSFT-IP-Tracker
-Tracks ASN: 8068-8075 using data from stat.ripe.net
+```Tracks ASN: 8068-8075 using data from stat.ripe.net```
 
 [![Publish MSFT ASN IP Ranges](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml/badge.svg?branch=master)](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml)
 
@@ -17,6 +17,32 @@ https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-4
 
 
 This tool just double checks 😉
+
+## Limitations
+
+### Is it guaranteed that all IP addresses within an AS prefix belong to the assigned AS?
+
+No, IP addresses within an AS prefix are not guaranteed to be owned by the AS that the prefix is assigned to.
+
+The assignment of an AS prefix to a network operator does not necessarily mean that all IP addresses within that prefix are owned or used by that network operator.
+In many cases, an AS prefix may be further divided into smaller sub-prefixes or IP address ranges that are assigned or leased to other organizations, which may be different from the original AS owner. 
+Additionally, IP address ownership can change over time, and some IP addresses within an AS prefix may be transferred to other entities or may become unassigned.
+
+### Can using AS prefixes to identify traffic from a specific company?
+
+Yes, BUT..
+
+While using AS prefixes to identify traffic from a specific company can be useful, there are ~~some~~ a lot of potential gotchas:
+
+- ✅ Limited scope:
+  - This method only works if the company has a dedicated AS number and IP address range that is associated with their network. If the company uses a shared hosting or cloud service, it may not be possible to uniquely identify their requests based on their AS number or IP address range.
+  - In this case Microsoft is large enough that its reasonable to assume they own all the IPs used to host their major products.
+- ⚠ False positives:
+  - It's possible that legitimate requests from a company's network may not match their AS prefix due to network changes or routing anomalies.
+- ❗ False negatives:
+  - It's also possible for malicious actors to spoof their IP address to make it appear as though their request is coming from a trusted AS prefix (ex. azure vm).
+- ✅ Maintenance: 
+  - AS prefixes are subject to change over time, and a company's network may be reassigned to a different AS number or IP address range.
 
 ## Usage
 

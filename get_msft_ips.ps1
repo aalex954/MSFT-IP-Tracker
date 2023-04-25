@@ -1,18 +1,19 @@
 # Loops through a range of AS Numbers and stores the resulting IP address ranges in a text file called asn_ip_ranges.txt
 
-$as_first = 8068
-$as_last = 8075
-$current_asn = $as_first
-$url = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS$current_asn"
+$asNumbers = @(3598,5761,6182,6584,8068,8069,8070,8071,8075,12076,13399,14271,14719,20046,23468,35106,45139,52985,395496,395524,395851,396463,398575,398656,400572)
+$baseUrl = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS"
 
-for ($current_asn; $current_asn -le $as_last; $current_asn++) {
-    $response = Invoke-RestMethod -Uri $url -Method Get
-    
-    if ($response.status -eq "ok") {
-        $prefixes = $response.data.prefixes
-        Write-Host "Testing ASN: $current_asn"
-        
-        foreach ($prefix in $prefixes) {
+foreach ($asNumber in $asNumbers){
+    $url = $baseUrl + $asNumber
+
+    try {
+        $response = Invoke-RestMethod -Uri $url -Method Get
+    } catch {
+        "Connection to the server failed"
+    }
+
+    if ($response.status -eq "ok"){
+        foreach ($prefix in $response.data.prefixes){
             $($prefix.prefix) | Out-File -FilePath "msft_asn_ip_ranges.txt" -Encoding utf8 -Append
         }
     } else {

@@ -2,7 +2,7 @@
 
 [![Publish MSFT ASN IP Ranges](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml/badge.svg?branch=master)](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml)
 
-Tracking ASN using data from stat.ripe.net
+Tracking ASNs using data from stat.ripe.net
 
 ```3598,5761,6182,6584,8068,8069,8070,8071,8075```
 

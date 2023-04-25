@@ -1,7 +1,12 @@
 # MSFT-IP-Tracker
-```Tracks ASN: 8068-8075 using data from stat.ripe.net```
 
 [![Publish MSFT ASN IP Ranges](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml/badge.svg?branch=master)](https://github.com/aalex954/MSFT-IP-Tracker/actions/workflows/build_and_release.yml)
+
+Tracking ASN using data from stat.ripe.net
+
+```3598,5761,6182,6584,8068,8069,8070,8071,8075```
+
+```12076,13399,14271,14719,20046,23468,35106,45139,52985,395496,395524,395851,396463,398575,398656,400572```
 
 ## Description
 

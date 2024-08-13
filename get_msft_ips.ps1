@@ -1,6 +1,6 @@
 # Loops through a range of AS Numbers and stores the resulting IP address ranges in a text file called asn_ip_ranges.txt
 
-$asNumbers = @(3598,5761,6182,6584,8068,8069,8070,8071,8075,12076,12233,13399,14271,14719,20046,23468,35106,45139,52985,395496,395524,395851,396463,398575,398656,400572)
+$asNumbers = @(3598,5761,6182,6584,8068,8069,8070,8071,8075,12076,13399,14271,14719,20046,23468,35106,45139,52985,395496,395524,395851,396463,397096,398575,398656,400572)
 $baseUrl = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS"
 
 foreach ($asNumber in $asNumbers){
